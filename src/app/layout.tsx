@@ -6,6 +6,7 @@ import { type Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 import Nav from "./_components/Nav"
 import { Toaster } from "~/components/ui/sonner"
+import { CSPostHogProvider } from "./_analytics/provider"
 
 export const metadata: Metadata = {
   title: "Next Gallery",
@@ -22,20 +23,22 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html
-        lang="en"
-        className={`${GeistSans.variable} dark`}
-      >
-        <body>
-          <div className="h-screen flex flex-col">
-            <Nav></Nav>
-            <main className="overflow-y-scroll min-h-screen">{children}</main>
-            {modal}
-          </div>
-          <div id="modal-root"></div>
-          <Toaster></Toaster>
-        </body>
-      </html>
+      <CSPostHogProvider>
+        <html
+          lang="en"
+          className={`${GeistSans.variable} dark`}
+        >
+          <body>
+            <div className="h-screen flex flex-col">
+              <Nav></Nav>
+              <main className="overflow-y-scroll min-h-screen">{children}</main>
+              {modal}
+            </div>
+            <div id="modal-root"></div>
+            <Toaster></Toaster>
+          </body>
+        </html>
+      </CSPostHogProvider>
     </ClerkProvider>
   )
 }

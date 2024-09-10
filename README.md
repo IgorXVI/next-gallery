@@ -11,6 +11,6 @@
 - [x] "taint" (server-only)
 - [x] Error management (w/ Sentry)
 - [x] Routing/image page (parallel route)
-- [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
+- [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
