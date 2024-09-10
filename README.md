@@ -7,7 +7,7 @@
 - [x] Actually set up a database (Verce Postgres)
 - [x] Attach database to UI
 - [x] Add authentication (w/ Celrk)
-- [ ] Add image upload
+- [x] Add image upload
 - [ ] Error management (w/ Sentry)
 - [ ] Routing/image page (parallel route)
 - [ ] Delete button (w/ Server Actions)

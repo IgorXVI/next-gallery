@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { SignedIn, SignedOut } from "@clerk/nextjs"
 
-import { db } from "../server/db"
+import { db } from "~/server/db"
 
 export const dynamic = "force-dynamic"
 
