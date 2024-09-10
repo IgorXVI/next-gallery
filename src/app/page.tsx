@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { SignedIn, SignedOut } from "@clerk/nextjs"
 
 import { getMyImgs } from "~/server/queries"
@@ -25,12 +26,14 @@ export default async function HomePage() {
               className="w-48 flex flex-col items-center"
               key={img.id}
             >
-              <Image
-                src={img.url}
-                alt={img.name}
-                width={500}
-                height={500}
-              />
+              <Link href={`/img/${img.id}`}>
+                <Image
+                  src={img.url}
+                  alt={img.name}
+                  width={500}
+                  height={500}
+                />
+              </Link>
               <p>{img.name}</p>
             </div>
           ))}
