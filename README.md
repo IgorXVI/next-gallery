@@ -4,7 +4,7 @@
 
 - [x] Make it deploy (Vercel)
 - [x] Scaffold basic ui with mock data
-- [ ] Actually set up a database (Verce Postgres)
+- [x] Actually set up a database (Verce Postgres)
 - [ ] Attach database to UI
 - [ ] Add authentication (w/ Celrk)
 - [ ] Add image upload
