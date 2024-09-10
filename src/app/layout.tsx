@@ -25,9 +25,11 @@ export default function RootLayout({
         lang="en"
         className={`${GeistSans.variable}`}
       >
-        <body className="font-sans bg-black flex flex-col gap-4 text-white">
-          <Nav></Nav>
-          {children}
+        <body className="font-sans bg-black text-white">
+          <div className="h-screen flex flex-col">
+            <Nav></Nav>
+            <main className="overflow-y-scroll min-h-screen">{children}</main>
+          </div>
           {modal}
           <div id="modal-root"></div>
         </body>
