@@ -13,7 +13,7 @@ export async function getMyImgs() {
 
   const images = await db.query.images.findMany({
     where: (model, { eq }) => eq(model.userId, user.userId),
-    orderBy: (model, { desc }) => desc(model.name),
+    orderBy: (model, { asc }) => asc(model.id),
   })
 
   return images
