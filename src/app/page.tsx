@@ -27,7 +27,7 @@ export default async function HomePage() {
             >
               <Image
                 src={img.url}
-                alt="image"
+                alt={img.name}
                 width={500}
                 height={500}
               />
