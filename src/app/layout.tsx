@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans"
 import { type Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 import Nav from "./_components/Nav"
+import { Toaster } from "~/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Next Gallery",
@@ -23,15 +24,16 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={`${GeistSans.variable}`}
+        className={`${GeistSans.variable} dark`}
       >
-        <body className="font-sans bg-black text-white">
+        <body>
           <div className="h-screen flex flex-col">
             <Nav></Nav>
             <main className="overflow-y-scroll min-h-screen">{children}</main>
+            {modal}
           </div>
-          {modal}
           <div id="modal-root"></div>
+          <Toaster></Toaster>
         </body>
       </html>
     </ClerkProvider>
