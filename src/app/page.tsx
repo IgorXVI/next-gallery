@@ -20,10 +20,10 @@ export default async function HomePage() {
         </p>
       </SignedOut>
       <SignedIn>
-        <div className="flex flex-wrap gap-4 p-5">
+        <div className="flex flex-wrap gap-4 p-5 items-center justify-center">
           {images.map((img) => (
             <div
-              className="w-48 flex flex-col items-center"
+              className="w-48 flex flex-col items-center gap-2"
               key={img.id}
             >
               <Link href={`/img/${img.id}`}>
@@ -34,7 +34,7 @@ export default async function HomePage() {
                   height={500}
                 />
               </Link>
-              <p>{img.name}</p>
+              <p>{img.id}</p>
             </div>
           ))}
         </div>
