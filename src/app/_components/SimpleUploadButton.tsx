@@ -87,6 +87,17 @@ export function SimpleUploadButton() {
         },
       )
     },
+    onUploadError(e) {
+      toast.dismiss("upload-begin")
+      toast.error(
+        <span className="text-lg text-red-500">
+          Upload Failed: {e.message}
+        </span>,
+        {
+          duration: 5000,
+        },
+      )
+    },
     onClientUploadComplete() {
       toast.dismiss("upload-begin")
       toast(<span className="text-lg">Upload Complete</span>)
