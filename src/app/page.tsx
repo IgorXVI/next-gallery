@@ -1,26 +1,23 @@
 import Image from "next/image"
 import { db } from "../server/db"
 
-import { imgData } from "./imgData"
-
 export const dynamic = "force-dynamic"
 
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany()
+  const images = await db.query.images.findMany({
+    orderBy: (model, { asc }) => asc(model.name),
+  })
 
   return (
     <main
       className="flex min-h-screen flex-col 
-      items-center justify-center text-white"
+      items-center text-white"
     >
       <div className="flex flex-wrap gap-4 p-5">
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-        {imgData.map((img) => (
+        {images.map((img) => (
           <div
-            className="w-48"
-            key={img.key}
+            className="w-48 flex flex-col items-center"
+            key={img.id}
           >
             <Image
               src={img.url}
@@ -28,6 +25,7 @@ export default async function HomePage() {
               width={500}
               height={500}
             />
+            <p>{img.name}</p>
           </div>
         ))}
       </div>
